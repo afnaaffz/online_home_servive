@@ -1,117 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-    body {
-  background-image:url(https://image.ibb.co/ecgeN7/daniel_von_appen_255536_unsplash.jpg);
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
+  <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-.login-page{
-  width: 360px;
-  padding: 10% 0 0;
-  margin: auto;
-}
-.form{
-
- position: relative;
-  z-index: 1;
-  background: #ffffff;
-  max-width: 360px;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f2f4f7;
 }
 
-.form input{
-  font-family: "Roboto", "sans-serif";
-  outline: 1;
-  background: #f2f2f2;
-  width: 100%;
-    border: 0;
-  margin: 0 0 15px;
-  padding: 15px;
-  box sizing: border-box;
-  font size: 14px;
-
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.form button{
-  font-family: "Roboto", Sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #4CAF50;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
+
+.flex-div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.name-content {
+  margin-right: 7rem;
+}
+
+.name-content .logo {
+  font-size: 3.5rem;
+  color: #F95C19;
+}
+
+.name-content p {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 2rem;
+  width: 530px;
+  height: 380px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+form input {
+  outline: none;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+form input:focus {
+  border: 1.8px solid black;
+}
+
+form .login {
+  outline: none;
+  border: none;
+  background: #F95C19;
+  padding: 0.8rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+form .login:hover {
+  background: #0f71f1;
   cursor: pointer;
-
-
 }
 
-.form button:hover,.form button: active{
-  background: #43A047;
-}
-
-.form message{
-  margin: 15px 0 0;
-  color: #ffffff;
-  font-size: 12px;
-}
-
-.form .message a{
-  color: #FCAF50;
+form a {
   text-decoration: none;
-
+  text-align: center;
+  font-size: 1rem;
+  padding-top: 0.8rem;
+  color: #1877f2;
 }
 
-.form .login-form{
-  display: none;
-
+form hr {
+  background: #f7f7f7;
+  margin: 1rem;
 }
 
-</style>
+form .create-account {
+  outline: none;
+  border: none;
+  background: #06b909;
+  padding: 0.8rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 1.1rem;
+  color: #fff;
+  width: 75%;
+  margin: 0 auto;
+}
+
+form .create-account:hover {
+  background: #03ad06;
+  cursor: pointer;
+}
+
+/* //.........Media Query.........// */
+
+@media (max-width: 500px) {
+  html {
+    font-size: 60%;
+  }
+
+  .name-content {
+    margin: 0;
+    text-align: center;
+  }
+
+  form {
+    width: 300px;
+    height: fit-content;
+  }
+
+  form input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  form .login {
+    font-size: 1.5rem;
+  }
+
+  form a {
+    font-size: 1.5rem;
+  }
+
+  form .create-account {
+    font-size: 1.5rem;
+  }
+
+  .flex-div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  html {
+    font-size: 60%;
+  }
+
+  .name-content {
+    margin: 0;
+    text-align: center;
+  }
+
+  form {
+    width: 300px;
+    height: fit-content;
+  }
+
+  form input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  form .login {
+    font-size: 1.5rem;
+  }
+
+  form a {
+    font-size: 1.5rem;
+  }
+
+  form .create-account {
+    font-size: 1.5rem;
+  }
+
+  .flex-div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+
+  .name-content {
+    margin: 0;
+    text-align: center;
+  }
+
+  form {
+    width: 300px;
+    height: fit-content;
+  }
+
+  form input {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  form .login {
+    font-size: 1.5rem;
+  }
+
+  form a {
+    font-size: 1.5rem;
+  }
+
+  form .create-account {
+    font-size: 1.5rem;
+  }
+
+  .flex-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .header {
+      height: 90vmax;
+    }
+  }
+}
+
+
+  </style>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>Online Home Services</h1>
- <link rel="style sheet" href = "style.css">
- <body>
-  <div class ="Login-page">
-    <div class ="form">
- <form method = "post">
-     {% csrf_token %}
- <input type="text" name="uname" placeholder="Username"/>
-<!-- <input type="text" placeholder="Email Address"/>-->
-<input type="password" name="pass" placeholder="Password"/>
-    <button type="submit">Sign Up</button>
-     <a href="{% url 'worker_registration' %} "> Worker Registration</a><br>
-     <a href="{% url 'customer_registration' %} "> Customer Registeration</a>
 
-    </form>
-
-   <form class= "login-form">
-  <input type="text" placeholder="Username"/>
-   <input type="password" placeholder="Password"/>
-   <button type="submit">Login</button>
-  <p class="message">Not Registered<a href= "#"> Registered</a>
-
-  </p>
-</form>
- </div>
-</div>
-
- <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
- <script>
- $('.message a').click(function(){
- $('form').animate({height:"toggle", opacity:"toggle", "slow";)
-        });</script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Login Page</title>
+    <link rel="stylesheet" href="./login_form_2.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="flex-div">
+        <div class="name-content">
+          <h1 class="logo">ONLINE HOME SERVICE</h1>
+          <p>Please login to your page</p>
+        </div>
+          <form method = "post">
+            {% csrf_token %}
+            <input type="text" name="uname" placeholder="Username" required />
+            <input type="password" name="pass" placeholder="Password" required>
+            <button class="login">Log In</button>
+            <hr>
+            <a href="{% url 'worker_registration' %} "> Worker Registration</a>
+            <a href="{% url 'customer_registration' %} "> Customer Registeration</a>
+          </form>
+      </div>
+    </div>
+  </body>
 </html>
+
+
 </body>
 </html>

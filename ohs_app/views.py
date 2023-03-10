@@ -12,8 +12,6 @@ from ohs_app.models import Complaints, Schedule, work, Take_Appointment, Registe
 def index(request):
     return render(request,"index.html")
 
-def dash(request):
-    return render(request,"dash.html")
 
 @login_required(login_url = 'login_page')
 def indexx(request):
@@ -453,6 +451,8 @@ def worker_view_appointment(request):
     print(s)
 
     return render(request,"worker/worker_view_appointment.html",{"s":s})
+
+# in this the which worker has login that worker and confirmed appointments of that workers data will be displayed
 
 @login_required(login_url = 'login_page')
 def worker_view_workers_data(request):
