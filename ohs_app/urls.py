@@ -6,7 +6,6 @@ urlpatterns = [
     path("",views.index,name='index'),
     path("indexx",views.indexx,name='indexx'),
     path("login_page", views.login_page, name="login_page"),
-    path("profile", views.profile, name="profile"),
 
     ##############ADMIN#############
 
@@ -55,6 +54,7 @@ urlpatterns = [
     path("update_worker_data/<int:id>/", views.update_worker_data, name="update_worker_data"),
     path("worker_view_workers_data", views.worker_view_workers_data, name="worker_view_workers_data"),
     path("schedules", views.schedules, name="schedules"),
+    path("delete_worker_schedule/<int:id>/", views.delete_worker_schedule, name="delete_worker_schedule"),
     path("worker_view_schedule", views.worker_view_schedule, name="worker_view_schedule"),
     path("delete_work_view/<int:id>/", views.delete_work_view, name="delete_work_view"),
     path("worker_view_appointment", views.worker_view_appointment, name="worker_view_appointment"),

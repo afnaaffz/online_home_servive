@@ -12,14 +12,13 @@ from ohs_app.models import Complaints, Schedule, work, Take_Appointment, Registe
 def index(request):
     return render(request,"index.html")
 
+# mainpage of the website.
 
 @login_required(login_url = 'login_page')
 def indexx(request):
     return render(request,"indexx.html")
 
-@login_required(login_url = 'login_page')
-def profile(request):
-    return render(request,"profile.html")
+# dashboard of the website.
 
 def login_page(request):
     if request.method == "POST":
@@ -39,10 +38,12 @@ def login_page(request):
             messages.info(request,"Invalid credentials")
     return render(request,"login.html")
 
-
+# login page for customer , worker and admin.
 @login_required(login_url = 'login_page')
 def adminbase(request):
     return render(request,"admin/admin base.html")
+
+# It is the dashboard of admin
 
 @login_required(login_url = 'login_page')
 def feedbacks(request):
@@ -195,9 +196,9 @@ def delete(request,id):
 @login_required(login_url = 'login_page')
 def update(request,id):
     a = Register1.objects.get(id=id)
-    form = Register_Form(instance=a)
+    form = Register_Form1(instance=a)
     if request.method == 'POST':
-        form = Register_Form(request.POST,instance=a)
+        form = Register_Form1(request.POST,instance=a)
         if form.is_valid():
             form.save()
             return redirect("workers_data")
@@ -397,6 +398,8 @@ def workers(request):
 def workerbase(request):
     return render(request,"worker/worker base.html")
 
+# It is the dashboard of worker
+
 def worker_registration(request):
     form1 = Login_Form()
     form2 = Register_Form1()
@@ -435,6 +438,14 @@ def worker_view_schedule(request):
 
 # this is used to view schedules of the worker
 
+
+def delete_worker_schedule(request,id):
+    wn = Schedule.objects.get(id=id)
+    wn.delete()
+    return redirect("worker_view_schedule")
+
+
+
 @login_required(login_url = 'login_page')
 def delete_work_view(request,id):
     wm = work.objects.get(id=id)
@@ -463,9 +474,9 @@ def worker_view_workers_data(request):
 @login_required(login_url = 'login_page')
 def update_worker_data(request,id):
     a = Register1.objects.get(id=id)
-    form = Register_Form(instance=a)
+    form = Register_Form1(instance=a)
     if request.method == 'POST':
-        form = Register_Form(request.POST,instance=a)
+        form = Register_Form1(request.POST,instance=a)
         if form.is_valid():
             form.save()
             return redirect("worker_view_workers_data")

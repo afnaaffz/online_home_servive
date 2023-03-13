@@ -26,6 +26,9 @@
       <td>{{n.start_time}}</td>
       <td>{{n.end_time}}</td>
 
+             <td><a href="{% url 'delete_worker_schedule' n.id %}" class="btn btn-danger">DELETE</a> </td>
+
+
 
     {% empty %}
     </tr>
